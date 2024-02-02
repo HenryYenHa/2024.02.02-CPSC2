@@ -1,0 +1,13 @@
+let knownResults = [1,1]
+
+function fib(number) {
+    if (knownResults.length > number)
+        return knownResults[number]; // F0 is 0 so we can use 0 index
+    
+    let newResult = fib(number-1) + fib(number-2)
+    knownResults.push(newResult)
+    return newResult 
+}
+
+var fibNumberToCalc = 75
+console.log(`Fib number at ${fibNumberToCalc} is ${fib(fibNumberToCalc)}`)
